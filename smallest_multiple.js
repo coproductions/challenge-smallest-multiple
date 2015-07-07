@@ -11,14 +11,14 @@ module.exports = function(numbers){
   while(smallestMultiple < Infinity){
     var n = numbers;
     while(n > 1){
-      var found = true;
+      var failed = false ;
       if(smallestMultiple%n !== 0){
-        found = false;
+        failed = true;
         break;
       }
       n--;
     }
-    if(found){
+    if(!failed){
       return smallestMultiple;
     }
     smallestMultiple += highestFactor;
